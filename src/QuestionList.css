@@ -1,0 +1,28 @@
+h1{
+    font-family: 'Agency FB';
+}
+
+AgGridReact{
+    font-family: 'Agency FB';
+    font-size: 100px;
+}
+
+.button-question-list {
+    background: white; 
+    border: 1px solid rgba(255, 0, 0, 0.699); 
+    font-size: 12px; 
+    color: red;
+    cursor: pointer;
+    padding: 8px 16px; 
+    transition: background 0.3s ease, color 0.3s ease; 
+  }
+  
+  .button-question-list:hover {
+    background: darkred; /* Change hover background color as needed */
+    color: white; /* Change hover text color as needed */
+  }
+  
+    .h1-question-list{
+    color: white;
+    font-size: 36px;
+  }

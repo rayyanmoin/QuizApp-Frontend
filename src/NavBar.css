@@ -1,6 +1,6 @@
 /* NavBar.css */
 nav {
-    background-color: rgb(255, 103, 103);
+    background-color: rgb(108, 162, 233);
     padding: 10px;
   }
   
@@ -12,10 +12,11 @@ nav {
   
   li {
     margin-right: 20px;
+    font-family: 'Agency FB';
+    font-size: 20px;
   }
   
   a {
     text-decoration: none;
     color: white;
   }
-  
