@@ -13,6 +13,15 @@ const NavBar = () => {
 				<li>
 					<Link to="/questionlist">Question List</Link>
 				</li>
+				<li>
+					<Link to="/addquestion">Add Question</Link>
+				</li>
+				<li>
+					<Link to="/createquiz">Create Quiz</Link>
+				</li>
+				<li>
+					<Link to="/quizlist">Quiz List</Link>
+				</li>
 			</ul>
 		</nav>
 	);

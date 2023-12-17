@@ -5,6 +5,7 @@ import "ag-grid-community/styles/ag-theme-alpine.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { CategoryFilter, DifficultyFilter } from "ag-grid-react";
 
 import "./QuestionList.css";
 
@@ -65,8 +66,8 @@ const QuestionList = () => {
 
 	const columnDefs = [
 		{ headerName: "S.no", field: "id", width: 100 },
-		{ headerName: "Category", field: "category", width: 150 },
-		{ headerName: "Difficulty Level", field: "difficultyLevel", width: 150 },
+		{ headerName: "Category", field: "category", width: 150, filter: "CategoryFilter" },
+		{ headerName: "Difficulty Level", field: "difficultyLevel", width: 150, filter: "DifficultyFilter" },
 		{
 			headerName: "Question",
 			field: "question",
@@ -92,7 +93,13 @@ const QuestionList = () => {
 			style={{ height: "550px", width: "1000px", margin: "0 auto", fontFamily: "Agency FB", fontSize: "20px" }}
 		>
 			<h1>Questions List</h1>
-			<AgGridReact columnDefs={columnDefs} rowData={questions} pagination={true} paginationPageSize={20} />
+			<AgGridReact
+				columnDefs={columnDefs}
+				rowData={questions}
+				pagination={true}
+				paginationPageSize={20}
+				frameworkComponents={{ CategoryFilter: CategoryFilter, DifficultyFilter: DifficultyFilter }}
+			/>
 		</div>
 	);
 };

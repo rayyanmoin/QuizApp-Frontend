@@ -1,3 +1,9 @@
 body{
-    background-image: "https://img.freepik.com/free-vector/doodle-school-stationery-seamless-pattern-design_107791-9605.jpg";
+    background: "D:/quiz-app Front-End/quiz-app/src/background.jpg";
+}
+
+center{
+    margin-top: 200px;
+    font-size: 50px;
+    color: rgb(108, 162, 233);
 }

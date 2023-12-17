@@ -7,22 +7,22 @@ AgGridReact{
     font-size: 100px;
 }
 
-.button-question-list {
+.button-quiz-list {
     background: white; 
-    border: 1px solid rgba(255, 0, 0, 0.699); 
+    border: 1px solid green; 
     font-size: 12px; 
-    color: red;
+    color: green;
     cursor: pointer;
     padding: 8px 16px; 
     transition: background 0.3s ease, color 0.3s ease; 
   }
   
-  .button-question-list:hover {
-    background: red; /* Change hover background color as needed */
+  .button-quiz-list:hover {
+    background: green; /* Change hover background color as needed */
     color: white; /* Change hover text color as needed */
   }
   
-    .h1-question-list{
+    .h1-quiz-list{
     color: white;
     font-size: 36px;
   }
