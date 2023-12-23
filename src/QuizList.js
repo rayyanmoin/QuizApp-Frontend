@@ -6,10 +6,12 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./QuizList.css";
+import Modal from "react-modal"; 
 
 const QuizList = () => {
 	const [quiz, setQuiz] = useState([]);
 	const [question, setQuestion] = useState([]);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	useEffect(() => {
 		const fetchQuestions = async () => {
@@ -27,6 +29,11 @@ const QuizList = () => {
 	useEffect(() => {
 		console.log("question", question);
 	}, [question]);
+	   const closeModal = () => {
+				// Close the modal
+				setIsModalOpen(false);
+				setQuestion([]);
+			};
 
 	const handleViewQuestion = async (rowId) => {
 		try {
@@ -34,11 +41,20 @@ const QuizList = () => {
 			console.log("response", response.data);
 			setQuestion(response.data);
 			console.log("row Id :-", rowId);
+			setIsModalOpen(true);
             // HW
             // Open Modal and view the questions
             // state to be used is question
 		} catch (error) {
 			console.error("Error fetching question:", error);
+			toast.error("Some Error Occured unable to Fetch Quiz Questions!", {
+				position: "top-right",
+				autoClose: 3000, // 3 seconds
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+			});
 		}
 	};
 
@@ -70,6 +86,17 @@ const QuizList = () => {
 		>
 			<h1>Quiz List</h1>
 			<AgGridReact columnDefs={columnDefs} rowData={quiz} pagination={true} paginationPageSize={20} />
+
+			<Modal isOpen={isModalOpen} onRequestClose={closeModal} className="modal-content" overlayClassName="modal-overlay">
+				<h2 style={{ textAlign: "center", margin: "0 auto" }}>Quiz Questions</h2>
+				<ol>
+					{question.map((questiondata, index) => (
+						<li key={index}>{questiondata.question}</li>
+					))}
+				</ol>
+
+				<button onClick={closeModal}>Close</button>
+			</Modal>
 		</div>
 	);
 };
