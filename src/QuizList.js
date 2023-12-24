@@ -230,10 +230,10 @@ const QuizList = () => {
 					))}
 				</ol>
 				<div style={{ textAlign: "center" }}>
-					<button type="button" onClick={closeAttemptModal} style={{ marginRight: "10px", backgroundColor: "red", color: "white" }}>
+					<button type="button" onClick={closeAttemptModal} className="close">
 						Close
 					</button>
-					<button type="button" onClick={handleSubmit} style={{ backgroundColor: "green", color: "white" }}>
+					<button type="button" onClick={handleSubmit} className="submit">
 						Submit
 					</button>
 				</div>

@@ -16,6 +16,51 @@ AgGridReact{
     padding: 8px 16px; 
     transition: background 0.3s ease, color 0.3s ease; 
   }
+
+  .button-attempt-quiz-list{
+    background: white; 
+    border: 1px solid green; 
+    font-size: 12px; 
+    color: green;
+    cursor: pointer;
+    padding: 8px 16px; 
+    transition: background 0.3s ease, color 0.3s ease; 
+  }
+
+    .button-attempt-quiz-list:hover{
+    background: green; /* Change hover background color as needed */
+    color: white; /* Change hover text color as needed */
+  }
+
+  .close{
+    background: white; 
+    border: 1px solid red; 
+    font-size: 12px; 
+    color: red;
+    cursor: pointer;
+    padding: 8px 16px; 
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .submit{
+    background: white; 
+    border: 1px solid green; 
+    font-size: 12px; 
+    color: green;
+    cursor: pointer;
+    padding: 8px 16px; 
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .close:hover{
+    background: red; /* Change hover background color as needed */
+    color: white; /* Change hover text color as needed */
+  }
+
+  .submit:hover{
+    background: green; /* Change hover background color as needed */
+    color: white; /* Change hover text color as needed */
+  }
   
   .button-quiz-list:hover {
     background: green; /* Change hover background color as needed */
@@ -45,14 +90,14 @@ AgGridReact{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  
    .modal-attempt-content {
     position: fixed; /* Changed to fixed */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 80%; /* Added max-width for responsiveness */
-    width: 800px; /* Adjust width as needed */
+    width: 800px; 
+    height: 500px;/* Adjust width as needed */
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ccc;
