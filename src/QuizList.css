@@ -71,10 +71,11 @@ AgGridReact{
     color: white;
     font-size: 36px;
   }
-  .modal-content {
+  .Quiz-modal-content {
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
+
     transform: translate(-50%, -50%);
     padding: 20px;
     background-color: #fff;

@@ -179,7 +179,7 @@ const QuizList = () => {
 			<h1>Quiz List</h1>
 			<AgGridReact columnDefs={columnDefs} rowData={quiz} pagination={true} paginationPageSize={20} />
 
-			<Modal isOpen={isModalOpen} onRequestClose={closeModal} className="modal-content" overlayClassName="modal-overlay">
+			<Modal isOpen={isModalOpen} onRequestClose={closeModal} className="Quiz-modal-content" overlayClassName="modal-overlay">
 				<h2 style={{ textAlign: "center", margin: "0 auto" }}>Quiz Questions</h2>
 				<ol>
 					{question.map((questiondata, index) => (

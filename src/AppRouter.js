@@ -8,6 +8,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CreateQuiz from "./CreateQuiz";
 import QuizList from "./QuizList";
+import QuizHistory from "./QuizHistory";
 
 const AppRouter = () => {
 	return (
@@ -22,6 +23,7 @@ const AppRouter = () => {
 				<Route path="/addquestion" element={<AddQuestion />} />
 				<Route path="/createquiz" element={<CreateQuiz />} />
 				<Route path="/quizlist" element={<QuizList />} />
+				<Route path="/quizhistory" element={<QuizHistory />} />
 			</Routes>
 		</Router>
 	);
