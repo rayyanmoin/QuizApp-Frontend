@@ -25,6 +25,9 @@ const NavBar = () => {
 				<li>
 					<Link to="/quizhistory">Quiz History</Link>
 				</li>
+				<li>
+					<Link to="/dashboard">Dashboard</Link>
+				</li>
 			</ul>
 		</nav>
 	);

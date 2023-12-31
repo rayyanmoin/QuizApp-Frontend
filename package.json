@@ -9,6 +9,8 @@
     "ag-grid-community": "^31.0.0",
     "ag-grid-react": "^31.0.0",
     "axios": "^1.6.2",
+    "highcharts": "^11.2.0",
+    "highcharts-react-official": "^3.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
