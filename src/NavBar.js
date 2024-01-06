@@ -3,12 +3,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
-const NavBar = () => {
+const NavBar = ({ loggedInUser }) => {
 	return (
 		<nav>
 			<ul>
 				<li>
-					<Link to="/">Home</Link>
+					<Link to="/register">Register</Link>
+				</li>
+				<li>
+					<Link to="/home">Home</Link>
 				</li>
 				<li>
 					<Link to="/questionlist">Question List</Link>
@@ -28,6 +31,11 @@ const NavBar = () => {
 				<li>
 					<Link to="/dashboard">Dashboard</Link>
 				</li>
+				{loggedInUser && (
+					<li>
+						<span className="username">Welcome, {loggedInUser.username} !</span>
+					</li>
+				)}
 			</ul>
 		</nav>
 	);
