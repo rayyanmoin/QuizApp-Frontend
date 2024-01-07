@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./QuizList.css";
 import Modal from "react-modal"; 
 
-const QuizList = () => {
+const QuizList = ({ loggedInUser }) => {
 	const [quiz, setQuiz] = useState([]);
 	const [question, setQuestion] = useState([]);
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -86,7 +86,7 @@ const QuizList = () => {
 	};
 
 	const handleSubmit = async () => {
-		const apiUrl = `http://localhost:8080/quiz/submit/${rowID}`;
+		const apiUrl = `http://localhost:8080/quiz/submit/${rowID}?username=${loggedInUser.username}`;
 		// Check if all questions have responses
 		const hasEmptyResponse = question.some((question) => !selectedResponses[question.id]);
 
@@ -195,49 +195,49 @@ const QuizList = () => {
 				className="modal-attempt-content"
 				overlayClassName="modal-attempt-overlay"
 			>
-			<h2 style={{ textAlign: "center", margin: "0 auto" }}>Attempt Quiz</h2>
-			<form>
-				<ol>
-					{question.map((question, index) => (
-						<li key={index}>
-							<p>{question.question}</p>
-							<ul>
-						{Object.keys(question).map((key) => {
-							if (key.startsWith("option")) {
-								return (
-									<li key={key}>
-										<label>
-											<input
-												type="radio"
-												name={`question_${question.id}`}
-												value={question[key]}
-												onChange={() =>
-													setSelectedResponses((prevResponses) => ({
-														...prevResponses,
-														[question.id]: question[key],
-													}))
-												}
-											/>
-											{question[key]}
-										</label>
-											</li>
-										);
-									}
-									return null;
-								})}
-							</ul>
-						</li>
-					))}
-				</ol>
-				<div style={{ textAlign: "center" }}>
-					<button type="button" onClick={closeAttemptModal} className="close">
-						Close
-					</button>
-					<button type="button" onClick={handleSubmit} className="submit">
-						Submit
-					</button>
-				</div>
-			</form>
+				<h2 style={{ textAlign: "center", margin: "0 auto" }}>Attempt Quiz</h2>
+				<form>
+					<ol>
+						{question.map((question, index) => (
+							<li key={index}>
+								<p>{question.question}</p>
+								<ul>
+									{Object.keys(question).map((key) => {
+										if (key.startsWith("option")) {
+											return (
+												<li key={key}>
+													<label>
+														<input
+															type="radio"
+															name={`question_${question.id}`}
+															value={question[key]}
+															onChange={() =>
+																setSelectedResponses((prevResponses) => ({
+																	...prevResponses,
+																	[question.id]: question[key],
+																}))
+															}
+														/>
+														{question[key]}
+													</label>
+												</li>
+											);
+										}
+										return null;
+									})}
+								</ul>
+							</li>
+						))}
+					</ol>
+					<div style={{ textAlign: "center" }}>
+						<button type="button" onClick={closeAttemptModal} className="close">
+							Close
+						</button>
+						<button type="button" onClick={handleSubmit} className="submit">
+							Submit
+						</button>
+					</div>
+				</form>
 			</Modal>
 		</div>
 	);
